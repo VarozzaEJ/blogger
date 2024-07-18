@@ -25,7 +25,7 @@ async function getBlogs() {
 <template>
   <div class="container">
     <div class="row">
-      <div v-for="blog in blogs" :key="blog.id" class="col-6">
+      <div v-for="blog in blogs" :key="blog.id" class="col-6 mb-3">
         <Blog :blogProp="blog" />
       </div>
     </div>

@@ -11,6 +11,9 @@ class BlogsService {
     AppState.blogs = blogs
   }
 
+  setActiveBlog(blog) {
+    AppState.activeBlog = blog
+  }
 }
 
 export const blogsService = new BlogsService()
