@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from "vue-router";
 import { Blog } from "../models/Blog";
 import { blogsService } from "../services/BlogsService";
 
@@ -24,7 +25,9 @@ function setActiveBlog() {
             <button @click="setActiveBlog()" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#blogModal">
               <i class="mdi mdi-book-open-outline" title="Open Blog"></i>
             </button>
-            <img class="creator-img selectable" :src="blogProp.creator.picture" :alt="blogProp.creator.name">
+            <RouterLink :to="{ name: 'Profile', params: { profileId: blogProp.creatorId } }">
+              <img class="creator-img selectable" :src="blogProp.creator.picture" :alt="blogProp.creator.name">
+            </RouterLink>
           </div>
     </div>
   </div>

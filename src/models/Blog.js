@@ -7,6 +7,7 @@ export class Blog {
     this.published = data.published
     this.creator = data.creator
     this.id = data.id || data._id
+    this.creatorId = data.creatorId
   }
 
 }
