@@ -3,6 +3,7 @@ import { computed, onMounted } from "vue";
 import { AppState } from "../AppState";
 import Pop from "../utils/Pop";
 import { blogsService } from "../services/BlogsService";
+import Blog from "../components/Blog.vue";
 
 
 const blogs = computed(() => AppState.blogs)
@@ -25,7 +26,7 @@ async function getBlogs() {
   <div class="container">
     <div class="row">
       <div v-for="blog in blogs" :key="blog.id" class="col-6">
-
+        <Blog :blogProp="blog" />
       </div>
     </div>
   </div>
